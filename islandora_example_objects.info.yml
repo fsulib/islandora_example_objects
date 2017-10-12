@@ -1,0 +1,12 @@
+name: islandora_example_objects
+type: module
+description: Islandora Example Objects
+core: 8.x
+package: islandora
+dependencies:
+  - islandora
+  - islandora_collection
+  - islandora_image
+  - realistic_dummy_content
+  - realistic_dummy_content_api
+  - devel_generate
