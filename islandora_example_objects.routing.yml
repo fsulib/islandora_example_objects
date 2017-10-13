@@ -1,0 +1,10 @@
+islandora_example_objects.config:
+
+  path: '/admin/config/islandora_example_objects/config'
+
+  defaults:
+    _form: '\Drupal\islandora_example_objects\Form\IslandoraExampleObjectsConfigForm'
+    _title: 'Islandora Example Objects Configuration'
+
+  requirements:
+    _permission: 'administer site configuration'
