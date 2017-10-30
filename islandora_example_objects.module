@@ -4,12 +4,3 @@
  * @file
  * Contains islandora_example_objects.module.
  */
-
-use Drupal\realistic_dummy_content_api\includes\RealisticDummyContentDebugLog;
-
-/**
- * Implements hook_install().
- */
-function islandora_example_objects_install() {
-  //realistic_dummy_content_api_apply_recipe(new RealisticDummyContentDebugLog());
-}

@@ -7,6 +7,7 @@
 namespace Drupal\islandora_example_objects\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\islandora_example_objects\includes\RealisticDummyContentWatchdogLog;
 
 class IslandoraExampleObjectsConfigForm extends ConfigFormBase {
   /**
@@ -53,6 +54,10 @@ class IslandoraExampleObjectsConfigForm extends ConfigFormBase {
     $config->set('islandora_example_objects.email', $form_state->getValue('email'));
     $config->set('islandora_example_objects.node_types', $form_state->getValue('node_types'));
     $config->save();
+
+    // Create the dummy content
+    realistic_dummy_content_api_apply_recipe(new RealisticDummyContentWatchdogLog());
+
     return parent::submitForm($form, $form_state);
   }
 
