@@ -4,11 +4,9 @@
  * @file
  * Contains a recipe for generating realistic Islandora dummy content.
  * 
- * Note: realistic_dummy_content and devel_generate modules must be enabled.
- *
- * To create sample content, overwrite the file installed by default in
- * PATH_TO_MODULES/realistic_dummy_content/realistic_dummy_content/recipe/
- * with this one and run 'drush generate-realistic'. 
+ * Note: This file is edited using the configuration form for the module
+ * DO NOT EDIT DIRECTLY
+ *  
  */
 
 // Required as of the 2.x branch.
