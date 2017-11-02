@@ -24,17 +24,17 @@ class IslandoraExampleObjectsConfigForm extends ConfigFormBase {
     $form = parent::buildForm($form, $form_state);
     $config = $this->config('islandora_example_objects.settings');
 
-    $form['email'] = array(
-      '#type' => 'textfield',
-      '#title' => $this->t('Email'),
-      '#default_value' => $config->get('islandora_example_objects.email'),
-      '#required' => TRUE,
-    );
-
     $node_types = \Drupal\node\Entity\NodeType::loadMultiple();
     $node_type_titles = array();
     foreach ($node_types as $machine_name => $val) {
       $node_type_titles[$machine_name] = $val->label();
+    }
+
+    foreach ($node_type_titles as $node_type_machine_name => $node_type_title) {
+      $form[$node_type_machine_name] = array (
+        '#type' => 'number',
+        '#title' => $node_type_title,
+      );
     }
 
     $form['node_types'] = array(
@@ -51,7 +51,6 @@ class IslandoraExampleObjectsConfigForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('islandora_example_objects.settings');
-    $config->set('islandora_example_objects.email', $form_state->getValue('email'));
     $config->set('islandora_example_objects.node_types', $form_state->getValue('node_types'));
     $config->save();
 

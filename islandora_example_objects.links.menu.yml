@@ -1,0 +1,6 @@
+# Islandora Example Objects configuration form
+system.islandora_example_objects_settings:
+  title: 'Islandora Example Objects Configuration'
+  parent: system.admin_config_islandora
+  route_name: system.islandora_example_objects_settings
+  description: 'Configure and create new placeholder objects'

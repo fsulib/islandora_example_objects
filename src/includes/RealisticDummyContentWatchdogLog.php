@@ -12,14 +12,16 @@ class RealisticDummyContentWatchdogLog implements RealisticDummyContentLogInterf
    * {@inheritdoc}
    */
   public function log($text, $vars = array()) {
-
+    //Log a notice
+    \Drupal::logger('islandora_example_objects')->notice($text);
   }
 
   /**
    * {@inheritdoc}
    */
   public function error($text, $vars = array()) {
-
+    //Log an error
+    \Drupal::logger('islandora_example_objects')->error($text);
   }
 
 }
